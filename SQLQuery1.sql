@@ -12,6 +12,13 @@ LEFT OUTER JOIN Emotion e ON e.Id = pe.Id
 WHERE e.Name != 'NULL'
 */
 
---Exercise 3
+--Exercise 3 
+/*
 SELECT COUNT(DISTINCT p.Title)
 FROM  Poem p
+*/
+
+--Exercise 4
+SELECT TOP (76) a.Name
+FROM  Author a
+ORDER BY a.Name
