@@ -43,5 +43,21 @@ ORDER BY a.Name
 */
 
 --Exercise 7
+/*
 SELECT SUM(WordCount)
 FROM POEM
+*/
+
+--Exercise 8
+/*
+SELECT TOP 1 MIN(CharCount), Title
+FROM Poem
+GROUP BY Title
+ORDER BY MIN(CharCount)
+*/
+
+--Exercise 9
+SELECT COUNT(GradeId)
+FROM Author
+WHERE GradeId = 3
+
