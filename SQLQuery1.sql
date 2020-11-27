@@ -121,6 +121,16 @@ WHERE EmotionId = 3
 */
 
 --Exercise 17
-SELECT COUNT(pe.PoemId)
+/*
+SELECT COUNT(p.Title)
+FROM Poem p 
+LEFT JOIN PoemEmotion pe ON p.Id = pe.PoemId
+WHERE pe.PoemId IS NULL
+*/
+
+--Exercise 18
+SELECT TOP 1 pe.EmotionId, COUNT(p.Title)
 FROM PoemEmotion pe
-WHERE pe.EmotionId = NULL
+LEFT JOIN Poem p ON p.Id = pe.PoemId
+GROUP BY pe.EmotionId
+ORDER BY pe.Emotionid
