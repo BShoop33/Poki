@@ -57,7 +57,13 @@ ORDER BY MIN(CharCount)
 */
 
 --Exercise 9
+/*
 SELECT COUNT(GradeId)
 FROM Author
 WHERE GradeId = 3
+*/
 
+--Exercise  10
+SELECT COUNT(GradeId)
+FROM Author
+WHERE GradeId = 3 OR GradeId = 2 OR GradeId = 1
