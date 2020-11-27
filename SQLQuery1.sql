@@ -105,8 +105,22 @@ ORDER BY p.WordCount DESC
 */
 
 --Exercise 15
+/*
 SELECT  TOP 10 a.Id, COUNT(p.Title)
 FROM Poem p
 LEFT JOIN Author a ON a.ID = p.AuthorId
 GROUP BY a.Id
 ORDER BY COUNT(p.Title) DESC
+*/
+
+--Exercise 16
+/*
+SELECT COUNT(DISTINCT pe.PoemId)
+FROM PoemEmotion pe
+WHERE EmotionId = 3
+*/
+
+--Exercise 17
+SELECT COUNT(pe.PoemId)
+FROM PoemEmotion pe
+WHERE pe.EmotionId = NULL
