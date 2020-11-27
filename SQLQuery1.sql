@@ -88,8 +88,16 @@ ORDER BY a.GradeId
 */
 
 --Exercise 13
+/*
 SELECT a.GradeId, COUNT(DISTINCT p.Title), COUNT(DISTINCT a.Name)
 FROM Poem p
 LEFT JOIN Author a ON a.Id = p.AuthorId
 GROUP BY a.GradeId
 ORDER BY a.GradeId
+*/
+
+--Exercise 14
+SELECT TOP 1 p.Title
+FROM Poem p
+GROUP BY p.WordCount, p.Title
+ORDER BY p.WordCount DESC
