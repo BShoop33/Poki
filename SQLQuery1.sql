@@ -19,8 +19,24 @@ FROM  Poem p
 */
 
 --Exercise 4
+/*
+SELECT TOP (76) a.Name
+FROM  Author a
+ORDER BY a.Name
+*/
+
+--Exercise 5
+/*
 SELECT TOP (76) a.Name, g.Name
 FROM  Author a
 LEFT JOIN Grade g ON a.GradeId = g.Id
+ORDER BY a.Name
+*/
+
+--Exercise 6
+SELECT TOP (76) a.Name, g.Name, ge.Name
+FROM  Author a
+LEFT JOIN Grade g ON a.GradeId = g.Id
+LEFT JOIN Gender ge ON a.GenderId = ge.Id
 ORDER BY a.Name
 
