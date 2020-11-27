@@ -138,20 +138,24 @@ ORDER BY pe.Emotionid
 */
 
 --Exercise 19
-SELECT Max(g.Name)
+/*
+SELECT TOP 1 g.Name, COUNT(g.Name)
 FROM PoemEmotion pe
 LEFT JOIN Poem p ON p.Id = pe.PoemId
 LEFT JOIN Author a ON a.Id = p.AuthorId
 LEFT JOIN Grade g ON g.Id = a.GradeId
 WHERE pe.EmotionId = 4
+GROUP BY (g.Name)
+ORDER BY COUNT(g.Name) DESC
+*/
 
---Double Checking Exercise 19
-/*
-SELECT a.GradeId, COUNT(p.Title)
+
+--Exercise 20
+SELECT TOP 1 g.Name, COUNT(g.Name)
 FROM PoemEmotion pe
 LEFT JOIN Poem p ON p.Id = pe.PoemId
 LEFT JOIN Author a ON a.Id = p.AuthorId
-WHERE pe.EmotionId = 4
-GROUP BY a.GradeId
-ORDER BY a.GradeId
-*/
+LEFT JOIN Gender g ON g.Id = a.GenderId
+WHERE pe.EmotionId = 2
+GROUP BY (g.Name)
+ORDER BY COUNT(g.Name)
