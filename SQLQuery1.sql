@@ -71,7 +71,16 @@ WHERE GradeId = 3 OR GradeId = 2 OR GradeId = 1
 */
 
 --Exercise 11
-SELECT COUNT(DISTINCT Title)
+/*
+SELECT COUNT(Title)
 FROM Poem p
 LEFT JOIN Author a ON a.Id = p.AuthorId
 WHERE a.GradeId = 4
+*/
+
+--Exercise 12
+SELECT a.GradeId, COUNT(a.GradeId)
+FROM Poem p
+LEFT JOIN Author a ON a.Id = p.AuthorId
+GROUP BY a.GradeId
+ORDER BY a.GradeId
