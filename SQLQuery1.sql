@@ -129,8 +129,29 @@ WHERE pe.PoemId IS NULL
 */
 
 --Exercise 18
+/*
 SELECT TOP 1 pe.EmotionId, COUNT(p.Title)
 FROM PoemEmotion pe
 LEFT JOIN Poem p ON p.Id = pe.PoemId
 GROUP BY pe.EmotionId
 ORDER BY pe.Emotionid
+*/
+
+--Exercise 19
+SELECT Max(g.Name)
+FROM PoemEmotion pe
+LEFT JOIN Poem p ON p.Id = pe.PoemId
+LEFT JOIN Author a ON a.Id = p.AuthorId
+LEFT JOIN Grade g ON g.Id = a.GradeId
+WHERE pe.EmotionId = 4
+
+--Double Checking Exercise 19
+/*
+SELECT a.GradeId, COUNT(p.Title)
+FROM PoemEmotion pe
+LEFT JOIN Poem p ON p.Id = pe.PoemId
+LEFT JOIN Author a ON a.Id = p.AuthorId
+WHERE pe.EmotionId = 4
+GROUP BY a.GradeId
+ORDER BY a.GradeId
+*/
