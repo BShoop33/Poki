@@ -97,7 +97,16 @@ ORDER BY a.GradeId
 */
 
 --Exercise 14
+/*
 SELECT TOP 1 p.Title
 FROM Poem p
 GROUP BY p.WordCount, p.Title
 ORDER BY p.WordCount DESC
+*/
+
+--Exercise 15
+SELECT  TOP 10 a.Id, COUNT(p.Title)
+FROM Poem p
+LEFT JOIN Author a ON a.ID = p.AuthorId
+GROUP BY a.Id
+ORDER BY COUNT(p.Title) DESC
