@@ -34,9 +34,14 @@ ORDER BY a.Name
 */
 
 --Exercise 6
+/*
 SELECT TOP (76) a.Name, g.Name, ge.Name
 FROM  Author a
 LEFT JOIN Grade g ON a.GradeId = g.Id
 LEFT JOIN Gender ge ON a.GenderId = ge.Id
 ORDER BY a.Name
+*/
 
+--Exercise 7
+SELECT SUM(WordCount)
+FROM POEM
